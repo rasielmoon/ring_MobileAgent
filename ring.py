@@ -1,3 +1,5 @@
+import threading
+
 connect  =[[0,1,0,0,0,0,0,0,0,1],
            [1,0,1,0,0,0,0,0,0,0],
            [0,1,0,1,0,0,0,0,0,0],
@@ -18,5 +20,6 @@ def agent ():
 
 
 if __name__ == '__main__' :
-	print ("hoge")
+	agent1 = threading.Thread(target=agent, name="agent1", args=())
+	agent1.start()
 	agent()
